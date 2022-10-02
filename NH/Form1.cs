@@ -14,6 +14,7 @@ namespace NH
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -21,21 +22,15 @@ namespace NH
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread thread = new Thread(delegate ()
-            {
-
-            });
-            thread.Start();
+           
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath("pill.ico"));
-            notifyIcon1.Text = "Some text";
-            notifyIcon1.Visible = true;
-            notifyIcon1.BalloonTipTitle = "Дед, выпей таблеткуб а то получишь по жопе! ";
-            notifyIcon1.BalloonTipText = "Click here or see details";
-            notifyIcon1.ShowBalloonTip(100);
+            Medicament noshpa = new Medicament();
+            Alerts.An_Hour_Before_Taking_The_Medicine("", noshpa.Get_Breakfast(), notifyIcon1);
+
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

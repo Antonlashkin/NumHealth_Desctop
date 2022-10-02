@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Windows.Forms;
 
 namespace NH
 {
@@ -13,9 +15,14 @@ namespace NH
             Console.WriteLine("У вас закончился препарат " + Name + "! Стоит купит еще.");
         }
 
-        public void An_Hour_Before_Taking_The_Medicine(string Name, DateTime Reception_Time)
+        static public void  An_Hour_Before_Taking_The_Medicine(string Name, DateTime Reception_Time, NotifyIcon notifyIcon1)
         {
-            Console.WriteLine("Через 1 час, в " + Reception_Time + " нужно будет принять " + Name + "!");
+            notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath("pill.ico"));
+            notifyIcon1.Text = "Some text";
+            notifyIcon1.Visible = true;
+            notifyIcon1.BalloonTipTitle = "Дед, выпей таблеткуб а то получишь по жопе! ";
+            notifyIcon1.BalloonTipText = "Click here or see details";
+            notifyIcon1.ShowBalloonTip(100);
         }
 
     }
