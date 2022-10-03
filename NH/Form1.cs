@@ -22,12 +22,13 @@ namespace NH
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            button1.Text = "Оповещение";
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             Medicament noshpa = new Medicament();
             Alerts.An_Hour_Before_Taking_The_Medicine("", noshpa.Get_Breakfast(), notifyIcon1);
 
